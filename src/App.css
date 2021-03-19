@@ -1,38 +1,191 @@
 .App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #e71414;
+}
+* {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.wrapper {
+  background: #922d2d85;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  color: white;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #e71414, #c21111);
+  box-shadow: 50px 50px 100px #b81010, -50px -50px 100px #f81616;
+}
+
+
+body {
+  background: #333;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ 
+
+.time-sets {
+  display: flex;
+}
+
+.time-sets > button {
+  margin: auto 2rem;
+}
+
+.card-panel {
+  transition: all 0.3 ease-in-out;
+  width: 80px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #ba0202, #dd0202);
+  box-shadow: 50px 50px 100px #b00202, -50px -50px 100px #ee0202;
+}
+
+#break-decrement {
+  fill: white;
+}
+
+.card-panel:hover {
+  transition: all 0.3 ease-in-out;
+
+  border-radius: 109px;
+  background: linear-gradient(145deg, #e71414, #c21111);
+  box-shadow: 50px 50px 100px #b81010, -50px -50px 100px #f81616;
+}
+
+.btn-small {
+  transition: all 0.3 ease-in-out;
+  width: 80px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #ba0202, #dd0202);
+  box-shadow: 50px 50px 100px #b00202, -50px -50px 100px #ee0202;
+}
+
+.btn-small:hover {
+  transition: all 0.3 ease-in-out;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #e71414, #c21111);
+  box-shadow: 50px 50px 100px #b81010, -50px -50px 100px #f81616;
+}
+
+.card-panel:active {
+  border-radius: 109px;
+  background: #d81313;
+  box-shadow: inset 50px 50px 100px #b81010, inset -50px -50px 100px #f81616;
+}
+
+.btn-small:active {
+  border-radius: 109px;
+  background: #d81313;
+  box-shadow: inset 50px 50px 100px #b81010, inset -50px -50px 100px #f81616;
+}
+
+#break-increment {
+  fill: white;
+}
+
+#session-increment {
+  fill: white;
+}
+
+#start_stop,
+#reset-btn {
+  transition: all 0.3 ease-in-out;
+  width: 80px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #ba0202, #dd0202);
+  box-shadow: 50px 50px 100px #b00202, -50px -50px 100px #ee0202;
+  margin: 1rem;
+}
+
+#start_stop:hover,
+#reset-btn:hover {
+  transition: all 0.3 ease-in-out;
+  border-radius: 109px;
+  background: linear-gradient(145deg, #e71414, #c21111);
+  box-shadow: 50px 50px 100px #b81010, -50px -50px 100px #f81616;
+}
+
+#start_stop:focus,
+#reset-btn:focus {
+  border-radius: 109px;
+  background: #d81313;
+  box-shadow: inset 50px 50px 100px #b81010, inset -50px -50px 100px #f81616;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 9000;
+  border-radius: 50%;
+  left: 50px;
+  bottom: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transition: all 0.3s ease-in-out;
+
+  transform: scale(1.2);
+}
+
+
+
+@media(max-width: 425px){
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 0;
+    
   }
-  to {
-    transform: rotate(360deg);
+
+  .time-sets{
+    flex-direction: column;
+  }
+
+  .logo{
+    transform:scale(.7);
+    left:15px;
+    bottom:15px;
+  }
+
+  .logo:hover{
+    transform:scale(1)
+  }
+
+  h1{
+    font-size: 1.2rem;
+  }
+
+  h3{
+    font-size: 1rem;
   }
 }
